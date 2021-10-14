@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>The Reaction Tab</title>
+  <title>The Reaction Table</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -24,14 +24,16 @@
       myTime = Date.now()
       console.log(myTime)
   }
-
-  function startTime() {
-    var startCount = Math.floor(Math.random()*10 + 2)
-    for(let i=0; i<startCount; i++){
-        setTimeout( ()=>{
-            document.getElementById("countdown").innerHTML = "Count: " + i
-        }, (startCount-i)*1000)
-    }
+    function startTime() {
+            for (let i = 0; i < 4; i++) {
+                setTimeout(() => {
+                    document.getElementById("countdown").innerHTML = "Count: " + i
+                }, (3 - i) * 1000)
+            }
+            setTimeout(() => {
+                checkMyTime()
+            }, 3000)
+        }
     setTimeout(()=>{
         checkMyTime()
     }, 3000)
